@@ -5,12 +5,19 @@ const cardHeader = document.querySelector('.card-title');
 const cardText = document.querySelector('.card-text');
 const readMoreButton = document.querySelector('.read-more-btn');
 
+
+const updateCopy = (copy) => {
+    updatedDifinition = copy.split('[').join('').split(']').join('');
+    cardText.textContent = updatedDifinition;
+};
+
 const updateUI = (data) => {
     card.classList.remove('d-none');
     cardHeader.textContent = data.list[0].word;
-    cardText.textContent = data.list[0].definition;
+    updateCopy(data.list[0].definition);
+    //cardText.textContent = data.list[0].definition;
     readMoreButton.setAttribute('href', data.list[0].permalink);
-}
+};
 
 
 // request
@@ -22,7 +29,7 @@ const getData = async (request) => {
 }
 
 
-// Get the request from UI..
+// Get the request from UI
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
