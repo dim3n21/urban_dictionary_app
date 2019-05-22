@@ -3,16 +3,36 @@ body {
 }
 
 .container {
-    max-width: 500px;
+    max-width: 900px;
 }
 .app {
     margin-top: 100px;
 }
-
+.card {
+    max-width: 400px
+}
 .header {
     font-size: 30px;
 }
 
 .copy {
     font-size: 15px;
+}
+
+.history {
+    margin-top: 100px;
+}
+
+.history-header {
+    font-size: 30px;
+    padding: 25px;
+}
+
+.history-item {
+    padding: 5px;
+    border-bottom: 1px solid #333;
+}
+
+.clear-history-btn {
+    margin-top: 25px;
 }
