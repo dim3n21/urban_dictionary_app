@@ -36,3 +36,8 @@ body {
 .clear-history-btn {
     margin-top: 25px;
 }
+
+.clear-db-history-btn {
+    margin-top: 25px;
+    margin-left: 10px;
+}

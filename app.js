@@ -6,8 +6,9 @@ const cardText = document.querySelector('.card-text');
 const readMoreButton = document.querySelector('.read-more-btn');
 const history = document.querySelector('.history-query');
 const clearHistory = document.querySelector('.clear-history-btn');
+const clearDBHistory = document.querySelector('.clear-db-history-btn');
 
-let arrayOfSearch = [];
+let arrayOfSearch = []; // Array for Search History
 
 const updateCopy = (copy) => {
     updatedDifinition = copy.split('[').join('').split(']').join('');
@@ -98,6 +99,22 @@ clearHistory.addEventListener('click', () => {
 })
 
 
+// clear DB history on the server 
+
+clearDBHistory.addEventListener('click', () => {
+
+    let arrayOfIds = []; // Array for Firebase DB History
+
+   db.collection('dictionaryCollection').get().then( snapshot => {
+       snapshot.docs.forEach( doc => {
+           arrayOfIds.push(doc.id);
+       })
+
+      arrayOfIds.forEach( id => {
+        db.collection('dictionaryCollection').doc(id).delete()
+      });
+   })
+});
 
 
 // Check the data on the server
@@ -106,6 +123,3 @@ db.collection('dictionaryCollection').get().then( snapshot => {
 }).catch (e => {
     console.log(e)
 })
-
-
-
