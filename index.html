@@ -48,6 +48,30 @@
         </div>
 
     </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBm4y2GSM5NbNccxGevhkRxg18tXdPFKGI",
+            authDomain: "urban-dictionary-6121f.firebaseapp.com",
+            databaseURL: "https://urban-dictionary-6121f.firebaseio.com",
+            projectId: "urban-dictionary-6121f",
+            storageBucket: "urban-dictionary-6121f.appspot.com",
+            messagingSenderId: "324191564844",
+            appId: "1:324191564844:web:a24edf7bcf16ccae"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        db = firebase.firestore();
+    </script>
+    
     <script src="app.js"></script>
 </body>
 

@@ -12,6 +12,8 @@ let arrayOfSearch = [];
 const updateCopy = (copy) => {
     updatedDifinition = copy.split('[').join('').split(']').join('');
     cardText.textContent = updatedDifinition;
+
+    return updatedDifinition;
 };
 
 const restoreToSearchHistory = () => {
@@ -48,6 +50,20 @@ const updateUI = (data) => {
     addToSearchHistory(data.list[0].word);
 };
 
+const updateServerData = (data) => {
+    const now = new Date();
+    const definition = {
+        discription: updateCopy(data.list[0].definition),
+        title: data.list[0].word,
+        created_at: firebase.firestore.Timestamp.fromDate(now)
+    };
+
+    db.collection('dictionaryCollection').add(definition).then(()=>{
+        console.log('the word was added to the server')
+    })
+
+}
+
 
 // request
 const getData = async (request) => {
@@ -67,7 +83,10 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     let searchWord = input.value.trim();
     form.reset();
-    getData(searchWord).then(data => updateUI(data));
+    getData(searchWord).then(data => {
+        updateUI(data);
+        updateServerData(data);
+    });
 })
 
 // clear history of search
@@ -81,6 +100,12 @@ clearHistory.addEventListener('click', () => {
 
 
 
+// Check the data on the server
+db.collection('dictionaryCollection').get().then( snapshot => {
+    console.log(snapshot.docs[0].data());
+}).catch (e => {
+    console.log(e)
+})
 
 
 
