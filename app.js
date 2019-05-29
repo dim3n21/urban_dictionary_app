@@ -103,16 +103,10 @@ clearHistory.addEventListener('click', () => {
 
 clearDBHistory.addEventListener('click', () => {
 
-    let arrayOfIds = []; // Array for Firebase DB History
-
    db.collection('dictionaryCollection').get().then( snapshot => {
        snapshot.docs.forEach( doc => {
-           arrayOfIds.push(doc.id);
+        db.collection('dictionaryCollection').doc(doc.id).delete()
        })
-
-      arrayOfIds.forEach( id => {
-        db.collection('dictionaryCollection').doc(id).delete()
-      });
    })
 });
 
