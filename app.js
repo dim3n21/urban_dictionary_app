@@ -7,6 +7,8 @@ const readMoreButton = document.querySelector('.read-more-btn');
 const history = document.querySelector('.history-query');
 const clearHistory = document.querySelector('.clear-history-btn');
 const clearDBHistory = document.querySelector('.clear-db-history-btn');
+const randomWordButton = document.querySelector('.random-word-btn');
+
 
 let arrayOfSearch = []; // Array for Search History
 
@@ -116,4 +118,15 @@ db.collection('dictionaryCollection').get().then( snapshot => {
     console.log(snapshot.docs[0].data());
 }).catch (e => {
     console.log(e)
+})
+
+
+// RANDOM WORD
+
+randomWordButton.addEventListener('click', () => {
+    let randomWord = arrayOfWords[Math.floor(Math.random()*arrayOfWords.length)];
+    getData(randomWord).then(data => {
+        updateUI(data);
+        updateServerData(data);
+    })
 })
