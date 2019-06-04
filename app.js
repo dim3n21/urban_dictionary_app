@@ -72,7 +72,7 @@ const updateServerData = (data) => {
 const getData = async (request) => {
     const response = await fetch(`http://api.urbandictionary.com/v0/define?term=${request}`)
     const data = await response.json();
-    // console.log(data);
+    console.log(data);
     return data;
 }
 
@@ -115,7 +115,7 @@ clearDBHistory.addEventListener('click', () => {
 
 // Check the data on the server
 db.collection('dictionaryCollection').get().then( snapshot => {
-    console.log(snapshot.docs[0].data());
+    //console.log(snapshot.docs[0].data());
 }).catch (e => {
     console.log(e)
 })

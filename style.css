@@ -1,6 +1,184 @@
-body {
-    background-color: #ccc;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+body {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+
+}
+
+.header {
+    height: 100vh;
+    background-image: linear-gradient(
+    to right bottom,
+    rgba(29,45,68, 0.8),
+    rgba(29,45,68, 0.5)),
+    url(assets/img/hero-image_.jpg);
+    background-size: cover;
+    background-position: top;
+}
+
+.text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+
+.logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    font-size: 0.8em;
+    font-family: 'Source Code Pro', monospace;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1x;
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 250px;
+    letter-spacing: 200px;
+    font-weight: 400;
+    
+}
+
+.first-letter {
+    display: inline-block;
+    animation: opactityChange 5s ease-out;
+}
+
+.second-letter {
+    display: inline-block;
+    transform: translateY(-300px);
+    animation: moveInUp 5s ease-out;
+    
+}
+
+.third-letter {
+    display: inline-block;
+    transform: translateY(300px);
+    animation: moveInDown 5s ease-out;
+}
+
+.fourth-letter {
+    display: inline-block;
+    transform: translateY(-300px);
+    animation: moveInUp 5s ease-out;
+}
+
+.fifth-letter {
+    display: inline-block;
+    animation: opactityChange 5s ease-out;
+}
+
+.btn:link,
+.btn:visited {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px #fff solid;
+    font-size: 1rem;
+    padding: 10px 20px;
+    text-align: center;
+    letter-spacing: 5px;
+    animation: opactityChangeBtn 5s ease-out;
+}
+
+.btn-white {
+    color: #fff;
+}
+
+@keyframes moveInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 100%;
+        transform: translateY(0);
+        
+    }
+
+    100% {
+        opacity: 100%;
+        transform: translateY(-300px);
+    }
+}
+
+@keyframes moveInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 100%;
+        transform: translateY(0);
+        
+    }
+
+    100% {
+        opacity: 100%;
+        transform: translateY(300px);
+    }
+}
+
+@keyframes opactityChange {
+    0% {
+        opacity: 0;
+       
+    }
+
+    50% {
+        opacity: 100%;
+        
+        
+    }
+
+    100% {
+        opacity: 100%;
+       
+    }
+}
+
+@keyframes opactityChangeBtn {
+    0% {
+        opacity: 0;
+       
+    }
+
+    70% {
+        opacity: 0;
+        
+        
+    }
+
+    100% {
+        opacity: 100%;
+       
+    }
+}
+
+
 
 .container {
     max-width: 900px;
