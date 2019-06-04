@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -22,6 +23,7 @@ body {
     url(assets/img/hero-image_.jpg);
     background-size: cover;
     background-position: top;
+    transition: all .2s,
 }
 
 .text-box {
@@ -100,10 +102,33 @@ body {
     text-align: center;
     letter-spacing: 5px;
     animation: opactityChangeBtn 5s ease-out;
+    color: #fff;
 }
 
-.btn-white {
-    color: #fff;
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: #fff;
+
+    transform: scaleY(0);
+    transition: transform .2s,
+                width .5s cubic-bezier(1,0,0,1) .2s,
+                background-color .1s;
+}
+
+.btn:hover::before {
+    transform: scaleY(1);
+    width: 100%;
+}
+
+.main-section {
+    height: 100vh;
+    background-color: #333;
+    transition: all .2s,
 }
 
 @keyframes moveInUp {
