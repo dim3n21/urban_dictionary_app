@@ -1,13 +1,14 @@
 const form = document.querySelector('form');
 const input = document.querySelector('.form-group #search');
-const card = document.querySelector('.card-body');
-const cardHeader = document.querySelector('.card-title');
-const cardText = document.querySelector('.card-text');
+const card = document.querySelector('.search-card-body');
+const cardHeader = document.querySelector('.search-card-body-title');
+const cardText = document.querySelector('.search-card-body-text');
 const readMoreButton = document.querySelector('.read-more-btn');
 const history = document.querySelector('.history-query');
 const clearHistory = document.querySelector('.clear-history-btn');
-const clearDBHistory = document.querySelector('.clear-db-history-btn');
+//const clearDBHistory = document.querySelector('.clear-db-history-btn');
 const randomWordButton = document.querySelector('.random-word-btn');
+const trustyPercentage = document.querySelector('.search-card-trusty-percentage');
 
 
 let arrayOfSearch = []; // Array for Search History
@@ -44,16 +45,21 @@ const addToSearchHistory = (search) => {
                             </div>`
 }
 
+const updateTrustyPercentate = (data) => {
+    return Math.floor(100 - ((data.list[0].thumbs_down * 100) / data.list[0].thumbs_up))
+}
+
 const updateUI = (data) => {
     card.classList.remove('d-none');
     cardHeader.textContent = data.list[0].word;
-    updateCopy(data.list[0].definition);
-    //cardText.textContent = data.list[0].definition;
+    cardText.textContent = updateCopy(data.list[0].definition);
     readMoreButton.setAttribute('href', data.list[0].permalink);
     addToSearchHistory(data.list[0].word);
+    // update the trusty percentage
+    trustyPercentage.innerHTML = `TRUSTY ${updateTrustyPercentate(data)}%`;
 };
 
-const updateServerData = (data) => {
+/* const updateServerData = (data) => {
     const now = new Date();
     const definition = {
         discription: updateCopy(data.list[0].definition),
@@ -65,7 +71,7 @@ const updateServerData = (data) => {
         console.log('the word was added to the server')
     })
 
-}
+} */
 
 
 // request
@@ -88,13 +94,15 @@ form.addEventListener('submit', (e) => {
     form.reset();
     getData(searchWord).then(data => {
         updateUI(data);
-        updateServerData(data);
+        console.log(data);
+        // updateServerData(data);
     });
 })
 
 // clear history of search
 
 clearHistory.addEventListener('click', () => {
+    card.classList.add('d-none');
     localStorage.clear();
     arrayOfSearch = [];
     history.innerHTML = '';
@@ -103,14 +111,14 @@ clearHistory.addEventListener('click', () => {
 
 // clear DB history on the server 
 
-clearDBHistory.addEventListener('click', () => {
+/* clearDBHistory.addEventListener('click', () => {
 
    db.collection('dictionaryCollection').get().then( snapshot => {
        snapshot.docs.forEach( doc => {
         db.collection('dictionaryCollection').doc(doc.id).delete()
        })
    })
-});
+}); */
 
 
 // Check the data on the server
@@ -126,7 +134,7 @@ db.collection('dictionaryCollection').get().then( snapshot => {
 randomWordButton.addEventListener('click', () => {
     let randomWord = arrayOfWords[Math.floor(Math.random()*arrayOfWords.length)];
     getData(randomWord).then(data => {
-        updateUI(data);
-        updateServerData(data);
+        updateUI(data)
+        // updateServerData(data);
     })
 })
