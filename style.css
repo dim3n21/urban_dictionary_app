@@ -13,6 +13,7 @@ body {
     color: #777;
 
 }
+
 /* - - - - - - - - - - Main Hero Section - - - - - - - - - - */
 
 .header {
@@ -45,7 +46,9 @@ body {
     font-weight: 200;
     
 }
+
 /* letters and main text */
+
 .letter {
     margin: 0 100px;
 }
@@ -285,47 +288,3 @@ body {
     font-weight: 700;
 }
 
-/*
-
-
-
-.card {
-    max-width: 400px
-}
-.header {
-    font-size: 30px;
-}
-
-.copy {
-    font-size: 15px;
-}
-
-.history {
-    margin-top: 100px;
-}
-
-.history-header {
-    font-size: 30px;
-    padding: 25px;
-}
-
-.history-item {
-    padding: 5px;
-    border-bottom: 1px solid #333;
-}
-
-.clear-history-btn {
-    margin-top: 25px;
-}
-
-.clear-db-history-btn {
-    margin-top: 25px;
-    margin-left: 10px;
-}
-
-.random-word-btn {
-    margin-bottom: 20px;
-    
-}
-
-*/

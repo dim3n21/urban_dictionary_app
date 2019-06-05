@@ -71,10 +71,12 @@ const updateUI = (data) => {
         console.log('the word was added to the server')
     })
 
-} */
+}
+
+*/
 
 
-// request
+// - - - Request
 const getData = async (request) => {
     const response = await fetch(`http://api.urbandictionary.com/v0/define?term=${request}`)
     const data = await response.json();
@@ -82,12 +84,11 @@ const getData = async (request) => {
     return data;
 }
 
-//restore history 
+// - - - Restore history 
 window.addEventListener('load',restoreToSearchHistory());
 
 
-// Get the request from UI
-
+// - - - Get the word from UI
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     let searchWord = input.value.trim();
@@ -99,8 +100,7 @@ form.addEventListener('submit', (e) => {
     });
 })
 
-// clear history of search
-
+// - - - Clear history of search
 clearHistory.addEventListener('click', () => {
     card.classList.add('d-none');
     localStorage.clear();
@@ -109,8 +109,7 @@ clearHistory.addEventListener('click', () => {
 })
 
 
-// clear DB history on the server 
-
+// - - - Clear DB history on the server 
 /* clearDBHistory.addEventListener('click', () => {
 
    db.collection('dictionaryCollection').get().then( snapshot => {
@@ -118,10 +117,11 @@ clearHistory.addEventListener('click', () => {
         db.collection('dictionaryCollection').doc(doc.id).delete()
        })
    })
-}); */
+});
+*/
 
 
-// Check the data on the server
+// - - - Check the data on the server
 db.collection('dictionaryCollection').get().then( snapshot => {
     //console.log(snapshot.docs[0].data());
 }).catch (e => {
@@ -129,7 +129,7 @@ db.collection('dictionaryCollection').get().then( snapshot => {
 })
 
 
-// RANDOM WORD
+// - - - Get the random word from the randomWord.js
 
 randomWordButton.addEventListener('click', () => {
     let randomWord = arrayOfWords[Math.floor(Math.random()*arrayOfWords.length)];
