@@ -18,10 +18,13 @@ let arrayOfSearch = []; // Array for Search History
 let nDefinition = 1;
 
 const updateCopy = (copy) => {
-    updatedDifinition = copy.split('[').join('').split(']').join('');
-    cardText.textContent = updatedDifinition;
+    let updatedDifinitionAll = copy.split('[').join('').split(']').join('');
+    let updatedDefinition = updatedDifinitionAll.split(' ').length > 40 ?
+        updatedDifinitionAll.split(' ').splice(0,70).join(' ') + '...'
+        : updatedDifinitionAll
+    cardText.textContent = updatedDefinition;
 
-    return updatedDifinition;
+    return updatedDefinition;
 };
 
 const restoreToSearchHistory = () => {
