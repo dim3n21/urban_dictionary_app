@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    cursor: none;
 }
 
 body {
@@ -13,6 +14,51 @@ body {
     color: #777;
 
 }
+
+/* - - - - - - - - - - Custom Cursor - - - - - - - - - - */
+
+.cursor {
+    width: 10px;
+    height: 10px;
+    background:rgb(250, 28, 31);
+    border-radius: 50%;
+    position: absolute;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    /*animation: cursorAnim .5s infinite alternate;*/
+    pointer-events: none;
+}
+
+.expand {
+    animation: cursorAnim3 .5s forwards;
+    border: 1px solid rgb(250, 28, 31);
+}
+
+/* Cursor keyframes */
+
+@keyframes cursorAnim {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(.7);
+    }
+}
+
+
+@keyframes cursorAnim3 {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
 
 /* - - - - - - - - - - Main Hero Section - - - - - - - - - - */
 
@@ -215,21 +261,25 @@ body {
 .btn-use {
     display: block;
     color: #fff !important;
+    text-decoration: none;
     border: 1px #fff solid;
     text-align: center;
     padding: 10px 20px;
-    cursor: pointer;
+    /*cursor: pointer;*/
     font-size: 1rem;
     text-transform: uppercase;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
     letter-spacing: 0.3rem;
     transition: all 0.5s ease-out;
+    margin-top: 0.8rem;
+
 }
 
 .btn-use:hover {
     background-color: #fff;
     color: #333 !important;
+    text-decoration: none;
 }
 
 .search-card {
@@ -274,17 +324,19 @@ body {
 }
 
 .history-item {
+    display: inline;
     font-family: 'Quicksand', sans-serif;
     text-transform: uppercase;
     font-size: 1.2rem;
     color: #fff;
-    margin: 1rem 0;
+    margin: 2rem 1rem;
 }
 
 .search-card-trusty-percentage {
     font-family: 'Lato', sans-serif;
-    color: red;
+    color: rgb(250, 28, 31);
     text-align: left;
     font-weight: 700;
+    margin-bottom: 3rem;
 }
 

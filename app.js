@@ -9,9 +9,13 @@ const clearHistory = document.querySelector('.clear-history-btn');
 //const clearDBHistory = document.querySelector('.clear-db-history-btn');
 const randomWordButton = document.querySelector('.random-word-btn');
 const trustyPercentage = document.querySelector('.search-card-trusty-percentage');
+const nextDefenitionButton = document.querySelector('.next-def-btn');
+const prevDefenitionButton = document.querySelector('.prev-def-btn');
+
 
 
 let arrayOfSearch = []; // Array for Search History
+let nDefinition = 1;
 
 const updateCopy = (copy) => {
     updatedDifinition = copy.split('[').join('').split(']').join('');
@@ -45,8 +49,8 @@ const addToSearchHistory = (search) => {
                             </div>`
 }
 
-const updateTrustyPercentate = (data) => {
-    return Math.floor(100 - ((data.list[0].thumbs_down * 100) / data.list[0].thumbs_up))
+const updateTrustyPercentate = (data, n) => {
+    return Math.floor(100 - ((data.list[n].thumbs_down * 100) / data.list[n].thumbs_up))
 }
 
 const updateUI = (data) => {
@@ -56,8 +60,14 @@ const updateUI = (data) => {
     readMoreButton.setAttribute('href', data.list[0].permalink);
     addToSearchHistory(data.list[0].word);
     // update the trusty percentage
-    trustyPercentage.innerHTML = `TRUSTY ${updateTrustyPercentate(data)}%`;
+    trustyPercentage.innerHTML = `TRUSTY ${updateTrustyPercentate(data, 0)}%`;
 };
+
+const updateDefinition = (data, n) => {
+    cardText.textContent = updateCopy(data.list[n].definition);
+    readMoreButton.setAttribute('href', data.list[n].permalink);
+    trustyPercentage.innerHTML = `TRUSTY ${updateTrustyPercentate(data, n)}%`;
+}
 
 /* const updateServerData = (data) => {
     const now = new Date();
@@ -137,4 +147,44 @@ randomWordButton.addEventListener('click', () => {
         updateUI(data)
         // updateServerData(data);
     })
+})
+
+
+// - - - Prev/Next Definition in the search box
+
+nextDefenitionButton.addEventListener('click', () => {
+
+    if ( nDefinition < 9) {
+        nDefinition += 1;
+        console.log(nDefinition)
+        getData(arrayOfSearch[arrayOfSearch.length-1]).then( data => {
+            updateDefinition(data, nDefinition)
+        })
+        .catch(err => console.log(err))
+    } else {
+        //nextDefenitionButton.textContent = "last one"
+        nDefinition = 0;
+        getData(arrayOfSearch[arrayOfSearch.length-1]).then( data => {
+            updateDefinition(data, nDefinition)
+        })
+        .catch(err => console.log(err))
+    }
+})
+
+prevDefenitionButton.addEventListener('click', () => {
+
+    if ( nDefinition > 0 ) {
+        nDefinition -= 1;
+        console.log(nDefinition)
+        getData(arrayOfSearch[arrayOfSearch.length-1]).then( data => {
+            updateDefinition(data, nDefinition)
+        })
+        .catch(err => console.log(err))
+    } else {
+        nDefinition = 9;
+        getData(arrayOfSearch[arrayOfSearch.length-1]).then( data => {
+            updateDefinition(data, nDefinition)
+        })
+        .catch(err => console.log(err))
+    }
 })

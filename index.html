@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <div class="cursor"></div>
      <header class="header container-fluid">
         <div class="text-box">
             <h1 class="heading-primary"> <span class="first-letter">u</span><span class="letter second-letter">r</span><span class="letter third-letter">b</span><span class="letter fourth-letter">a</span><span class="fifth-letter">n</span></h1>
@@ -39,7 +40,14 @@
                         <h4 class="search-card-body-title">Card Title</h4>
                         <p class="search-card-body-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
                         <p class="search-card-trusty-percentage"></p>
-                        <a class="btn-use read-more-btn my-5" href="#" target="_blank">Read More</a>
+                        <div class="d-flex justify-content-between">
+                            <div class="btn-use another-definition-btn prev-def-btn" >Prev Definition</div>
+                            <div class="btn-use another-definition-btn next-def-btn">Next Definition</div>
+                        </div>
+                        
+                        <a class="btn-use read-more-btn" href="#" target="_blank">Read More</a>
+                        
+
                     </div>
                 </div>
             </div>
@@ -84,6 +92,7 @@
         db = firebase.firestore();
     </script>
     
+    <script src="customCursor.js"></script>
     <script src="randomWord.js"></script>
     <script src="app.js"></script>
 </body>
