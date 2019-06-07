@@ -169,13 +169,6 @@ body {
     width: 100%;
 }
 
-.main-section {
-    min-height: 100vh;
-    padding: 7rem 0rem;
-    background-color: #333;
-    transition: all .2s;
-}
-
 /* keyframes for main section */
 
 @keyframes moveInUp {
@@ -293,6 +286,13 @@ body {
 
 .container {
     max-width: 1500px;
+}
+
+.main-section {
+    min-height: 100vh;
+    padding: 7rem 0rem;
+    background-color: #333;
+    transition: all .2s;
 }
 
 .btn-use {

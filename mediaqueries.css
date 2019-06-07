@@ -52,13 +52,71 @@
         width: 100%;
     }
 
+   
+    /* - - - - - - - - - - Dictionary Section - - - - - - - - - - */
+
+
+    .main-section {
+        padding: 2rem 0rem;
+    }
+
+    .search-card-box:last-child {
+        margin-top: 3rem;
+    }
+
+    .btn-use {
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        margin-top: 2rem;
+    
+    }
+
+    .btn-use:hover {
+        background-color: transparent;
+        text-decoration: none;
+        color: #fff !important;
+    }
+
+    .search-card {
+        padding: 2rem 0.5rem 0.5rem 0.5rem;;
+    }
+
+    .search-card-header-title {
+        font-size: 1.2rem;
+    }
+
     .search-card-input {
-        width: 300px;
+        width: 250px;
+    }
+
+    .search-card-body {
+        margin: 3rem 0rem 0rem 0rem;
+    }
+
+    .search-card-body-content {
+        height: 250px;
+    }
+    
+    .search-card-trusty-percentage {
+        margin: 2rem 0rem 2rem 0rem;
+    }
+
+    .prev-def-btn,
+    .next-def-btn {
+        margin-top: 0rem !important;
     }
 
 }
 
 @media (min-width: 576px) and (max-width: 992px) {
+
+    *{
+        cursor: default;
+    }
+
+    .cursor {
+        display: none;
+    }
   
 
     /* - - - Main Hero Section - - - */
@@ -108,9 +166,71 @@
         width: 100%;
     }
 
+
+    /* - - - - - - - - - - Dictionary Section - - - - - - - - - - */
+
+    .main-section {
+        padding: 0rem 0rem;
+    }
+
+    .search-card-box {
+        margin-top: 3rem;
+    }
+
+    .btn-use {
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        margin-top: 2rem;
+    
+    }
+
+    .btn-use:hover {
+        background-color: transparent;
+        text-decoration: none;
+        color: #fff !important;
+    }
+
+    .search-card {
+        padding: 2rem 0.5rem 0.5rem 0.5rem;;
+    }
+
+    .search-card-header-title {
+        font-size: 1.2rem;
+    }
+
+    .search-card-input {
+        width: 250px;
+    }
+
+    .search-card-body {
+        margin: 3rem 0rem 0rem 0rem;
+    }
+
+    .search-card-body-content {
+        height: 250px;
+    }
+    
+    .search-card-trusty-percentage {
+        margin: 2rem 0rem 2rem 0rem;
+    }
+
+    .prev-def-btn,
+    .next-def-btn {
+        margin-top: 0rem !important;
+    }
+
+
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
+
+    *{
+        cursor: default;
+    }
+
+    .cursor {
+        display: none;
+    }
 
     /* - - - Main Hero Section - - - */
 
@@ -161,6 +281,14 @@
 
     .search-card-input {
         width: 300px;
+    }
+
+    /* - - - - - - - - - - Dictionary Section - - - - - - - - - - */
+
+    
+    .prev-def-btn,
+    .next-def-btn {
+        margin-top: 1rem !important;
     }
 
 
