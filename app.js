@@ -68,7 +68,7 @@ const updateUI = (data) => {
 
 const updateDefinition = (data, n) => {
     cardText.textContent = updateCopy(data.list[n].definition);
-    readMoreButton.setAttribute('href', data.list[n].permalink);
+    readMoreButton.setAttribute('href', data.list[0].permalink);
     trustyPercentage.innerHTML = `TRUSTY ${updateTrustyPercentate(data, n)}%`;
 }
 
