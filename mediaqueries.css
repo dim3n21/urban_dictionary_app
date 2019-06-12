@@ -2,6 +2,10 @@
 
 @media (min-width: 0px) and (max-width: 576px) {
 
+    *{
+        cursor: default;
+    }
+
     .cursor {
         display: none;
     }
@@ -265,7 +269,7 @@
 
     .styled-btn:link,
     .styled-btn:visited {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     background-color: rgba(0,0,0,0.0);
     }
 
@@ -330,7 +334,7 @@
 
     .styled-btn:link,
     .styled-btn:visited {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     background-color: rgba(0,0,0,0.0);
     }
 

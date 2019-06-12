@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="SHORTCUT ICON" href="assets/favicon.png" type="image/png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
     <link
         href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Quicksand:300&display=swap"
         rel="stylesheet">
@@ -17,7 +18,7 @@
 
 <body>
     <div class="cursor"></div>
-    <header class="header">
+    <header class="header section">
         <div class="text-box">
             <h1 class="heading-primary"> <span class="first-letter">u</span><span
                     class="letter second-letter">r</span><span class="letter third-letter">b</span><span
@@ -26,7 +27,7 @@
         </div>
     </header>
 
-    <div class="main-section" id="main">
+    <div class="main-section section" id="main">
         <div class="container">
             <div class="row">
                 <div class="col search-card-box">
@@ -80,8 +81,21 @@
             </div>
         </div>
     </div>
+    <footer class="footer">
+        <div class="row">
+            <div class="col footer-icons">
+                <a href="https://github.com/dim3n21" target="_blank"><img src="assets/icons/github-logo.png" alt="github" class="footer-icon"></a>
+                <a href="https://codepen.io/dandrianov/" target="_blank"><img src="assets/icons/codepen.png" alt="codepen" class="footer-icon"></a>
+                <a href="https://www.linkedin.com/in/dmitry-andrianov/" target="_blank"><img src="assets/icons/linkedin.png" alt="linkedin" class="footer-icon"></a>
+                <a href="https://www.behance.net/dmitryandrianov" target="_blank"><img src="assets/icons/behance.png" alt="behance" class="footer-icon"></a>
+            </div>
+            <div class="col footer-text">&copy; by Dmitry Andrianov. Powered by
+                <a href="https://github.com/zdict/zdict/wiki/Urban-dictionary-API-documentation" target="_blank">Urbandictionary</a>.</div>
+        </div>
+    </footer>
 
 
+    
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>

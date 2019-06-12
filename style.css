@@ -27,6 +27,7 @@ body {
     transition-timing-function: ease-out;
     /*animation: cursorAnim .5s infinite alternate;*/
     pointer-events: none;
+    z-index: 1000;
 }
 
 .expand {
@@ -323,7 +324,7 @@ body {
     display: block;
     border: 1px #fff solid;
     padding: 3rem 3rem 1rem 3rem;
-    animation: opactityChange 5s ease-out;
+    animation: opactityChange 3s ease-out;
 }
 
 
@@ -351,6 +352,7 @@ body {
     font-size: 2rem;
     color: #fff;
     margin-bottom: 1rem;
+    animation: opactityChange 3s ease-out;
 }
 
 .search-card-body-content {
@@ -361,6 +363,7 @@ body {
     font-family: 'Quicksand', sans-serif;
     font-size: 1rem;
     color: #fff;
+    animation: opactityChange 3s ease-out;
 }
 
 .prev-def-btn,
@@ -379,17 +382,40 @@ body {
     font-size: 1.2rem;
     color: #fff;
     margin: 2rem 1rem;
+    animation: opactityChange 3s ease-out;
 }
 
 .search-card-trusty-percentage {
     font-family: 'Lato', sans-serif;
-    color: rgb(250, 28, 31);
+    color: #fa1c1f;
     text-align: left;
     font-weight: 700;
     margin-bottom: 3rem;
 }
 
 
+/* - - - - - - - - - - Footer - - - - - - - - - - */
+
+.footer {
+    padding: 3rem 2rem;
+    background-color: #333;
+}
+
+.footer-icon {
+    display: inline-block;
+    width: 2rem;
+    margin-left: 1rem;
+    color: #fa1c1f;
+
+}
+
+.footer-text {
+    text-align: right;
+}
+
+.footer-text a {
+    color: #fa1c1f;
+}
 
 
 
