@@ -110,6 +110,16 @@
         margin-top: 0rem !important;
     }
 
+    /* - - - - - - - - - - Footer - - - - - - - - - - */
+
+    .footer {
+        padding: 1rem 1rem;
+    }
+
+    .footer-icon {
+        margin: 0.5rem 1rem;
+    }
+
 }
 
 @media (min-width: 576px) and (max-width: 992px) {
